@@ -1,0 +1,40 @@
+<div class="container-fluid">
+    <div class="row p-3">
+        <div class="col-12 d-flex justify-content-center">
+            <p>{{starship?.name}}</p>
+        </div>
+        <div class="row p-3">
+            <div class="col-3"></div>
+            <img class="col-6 d-flex" [src]="starship?.imgURL">
+        </div>
+        <div class="col-3"></div>
+    </div>
+    <div class="row p-3">
+        <div class="col-12">
+            <p>MODEL: {{starship?.model}}</p>
+            <p>STARSHIP CLASS: {{starship?.starship_class}}</p>
+            <p>MANUFACTURER: {{starship?.manufacturer}}</p>
+            <p>COST: {{starship?.cost_in_credits}}</p>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-6">
+            <p>CREW: {{starship?.crew}}</p>
+            <p>PASSENGER CAPACITY: {{starship?.passengers}}</p>
+            <p>CARGO CAPACITY: {{starship?.cargo_capacity}}</p>
+            <p>CONSUMABLES: {{starship?.consumables}}</p>
+        </div>
+        <div class="col-6">
+            <p>LENGTH: {{starship?.length}}</p>
+            <p>MAXIMUM ATMOSPHERING SPEED: {{starship?.max_atmosphering_speed}}</p>
+            <p>HYPERDRIVE RATING: {{starship?.hyperdrive_rating}}</p>
+            <p>MAXIMUM SPEED IN REALSPACE: {{starship?.MGLT}}</p>
+        </div>
+    </div>
+    <div class="row p-3">
+        <div class="col-6">
+            <p>PILOTS: {{starship?.pilots}}</p>
+            <img src="" alt="">
+        </div>
+    </div>
+</div>

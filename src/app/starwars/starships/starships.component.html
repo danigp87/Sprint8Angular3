@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 text-center p-5 border border-dark border-5 rounded-1 bg-dark text-light"
+            *ngFor="let ss of starships">
+            <a [routerLink]="['/starship-info', extractStarshipId(ss.url)]" class="custom-link">
+                <p>{{ss.name}}</p>
+                <p>{{ss.model}}</p>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="loading" *ngIf="currentPage <= totalPages">
+    Cargando más...
+</div>
