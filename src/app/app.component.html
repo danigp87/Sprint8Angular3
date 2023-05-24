@@ -1,12 +1,16 @@
-﻿<div class="app-container" [ngClass]="{ 'bg-light': account }">
+﻿<div class="app-container general">
     <!-- main nav -->
-    <nav class="navbar navbar-expand navbar-dark bg-dark px-3" *ngIf="account">
+    <div class="d-flex justify-content-center">
+        <img src="assets/Star_Wars_Logo.svg.png" width="25%" height="25%">
+    </div>
+    <nav class="navbar navbar-expand px-3 d-flex justify-content-center border-top border-bottom" *ngIf="account">
         <div class="navbar-nav">
+
             <a routerLink="/home" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                class="nav-item nav-link">Home</a>
+                class="nav-item nav-link text-white">Home</a>
             <a routerLink="/starships" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
-                class="nav-item nav-link">Starships</a>
-            <button (click)="logout()" class="btn btn-link nav-item nav-link">Logout</button>
+                class="nav-item nav-link text-white border-end border-start">Starships</a>
+            <button (click)="logout()" class="btn btn-link nav-item nav-link text-white">Logout</button>
         </div>
     </nav>
 

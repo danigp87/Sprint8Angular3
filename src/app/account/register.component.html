@@ -1,5 +1,5 @@
-﻿<h3 class="card-header">Register</h3>
-<div class="card-body">
+﻿<h3 class="card-header bg-warning text-black">Register</h3>
+<div class="card-body bg-black text-white">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="row">
             <div class="mb-3 col-2">
@@ -62,11 +62,11 @@
             <div *ngIf="submitted && f.acceptTerms.errors" class="invalid-feedback">Accept Ts & Cs is required</div>
         </div>
         <div class="mb-3">
-            <button [disabled]="submitting" class="btn btn-primary">
+            <button [disabled]="submitting" class="btn btn-light">
                 <span *ngIf="submitting" class="spinner-border spinner-border-sm me-1"></span>
                 Register
             </button>
-            <a routerLink="../login" href="" class="btn btn-link">Cancel</a>
+            <a routerLink="../login" href="" class="btn btn-link text-white">Cancel</a>
         </div>
     </form>
 </div>

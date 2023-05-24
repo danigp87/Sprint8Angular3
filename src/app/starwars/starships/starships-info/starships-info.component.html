@@ -1,40 +1,46 @@
-<div class="container-fluid">
+<div class="container-fluid general p-5">
     <div class="row p-3">
         <div class="col-12 d-flex justify-content-center">
-            <p>{{starship?.name}}</p>
+            <h2 class="typoShip">{{starship?.name}}</h2>
         </div>
         <div class="row p-3">
             <div class="col-3"></div>
-            <img class="col-6 d-flex" [src]="starship?.imgURL">
+            <img class="col-6 d-flex border border-light" [src]="starship?.imgURL">
         </div>
         <div class="col-3"></div>
     </div>
     <div class="row p-3">
-        <div class="col-12">
-            <p>MODEL: {{starship?.model}}</p>
-            <p>STARSHIP CLASS: {{starship?.starship_class}}</p>
-            <p>MANUFACTURER: {{starship?.manufacturer}}</p>
-            <p>COST: {{starship?.cost_in_credits}}</p>
+        <div class="col-12 text-center">
+            <p><b>MODEL:</b> {{starship?.model}}</p>
+            <p><b>STARSHIP CLASS:</b> {{starship?.starship_class}}</p>
+            <p><b>MANUFACTURER:</b> {{starship?.manufacturer}}</p>
+            <p><b>COST:</b> {{starship?.cost_in_credits}}</p>
         </div>
     </div>
     <div class="row p-3">
         <div class="col-6">
-            <p>CREW: {{starship?.crew}}</p>
-            <p>PASSENGER CAPACITY: {{starship?.passengers}}</p>
-            <p>CARGO CAPACITY: {{starship?.cargo_capacity}}</p>
-            <p>CONSUMABLES: {{starship?.consumables}}</p>
+            <p><b>CREW:</b> {{starship?.crew}}</p>
+            <p><b>PASSENGER CAPACITY:</b> {{starship?.passengers}}</p>
+            <p><b>CARGO CAPACITY:</b> {{starship?.cargo_capacity}}</p>
+            <p><b>CONSUMABLES:</b> {{starship?.consumables}}</p>
         </div>
         <div class="col-6">
-            <p>LENGTH: {{starship?.length}}</p>
-            <p>MAXIMUM ATMOSPHERING SPEED: {{starship?.max_atmosphering_speed}}</p>
-            <p>HYPERDRIVE RATING: {{starship?.hyperdrive_rating}}</p>
-            <p>MAXIMUM SPEED IN REALSPACE: {{starship?.MGLT}}</p>
+            <p><b>LENGTH:</b> {{starship?.length}}</p>
+            <p><b>MAXIMUM ATMOSPHERING SPEED:</b> {{starship?.max_atmosphering_speed}}</p>
+            <p><b>HYPERDRIVE RATING:</b> {{starship?.hyperdrive_rating}}</p>
+            <p><b>MAXIMUM SPEED IN REALSPACE:</b> {{starship?.MGLT}}</p>
         </div>
     </div>
     <div class="row p-3">
         <div class="col-6">
-            <p>PILOTS: {{starship?.pilots}}</p>
-            <img src="" alt="">
+            <p><b>PILOTS:</b> </p>
+                <div *ngFor="let starship of starshipsArray">
+                    <div *ngFor="let imageUrl of starship.pilots">
+                      <img [src]="imageUrl" alt="">
+                      {{ imageUrl }}
+                    </div>
+                </div>
+                <app-pilots></app-pilots>
         </div>
     </div>
 </div>

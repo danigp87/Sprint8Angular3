@@ -15,13 +15,14 @@ import { HomeComponent } from './home';
 import { StarshipsComponent } from './starwars/starships/starships.component';
 import { StarshipsInfoComponent } from './starwars/starships/starships-info/starships-info.component';
 import { WelcomeComponent } from './starwars/welcome/welcome.component';
+import { PilotsComponent } from './starwars/starships/starships-info/pilots/pilots.component';
 
 @NgModule({
     imports: [
         BrowserModule,
         ReactiveFormsModule,
         HttpClientModule,
-        AppRoutingModule
+        AppRoutingModule,
     ],
     declarations: [
         AppComponent,
@@ -29,7 +30,8 @@ import { WelcomeComponent } from './starwars/welcome/welcome.component';
         HomeComponent,
         StarshipsComponent,
         StarshipsInfoComponent,
-        WelcomeComponent
+        WelcomeComponent,
+        PilotsComponent
     ],
     providers: [
         { provide: APP_INITIALIZER, useFactory: appInitializer, multi: true, deps: [AccountService] },

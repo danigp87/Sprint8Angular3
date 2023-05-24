@@ -1,0 +1,6 @@
+<div *ngFor="let starship of starshipsArray">
+    <div *ngFor="let imageUrl of starship.pilots">
+      <img [src]="imageUrl" alt="">
+      {{ imageUrl }}
+    </div>
+  </div>

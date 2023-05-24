@@ -43,7 +43,8 @@ export class StarshipsComponent implements OnInit {
           console.log(data.results)
         }),
       )
-      .subscribe();
+      .subscribe(() => {
+      });
   }
 
   @HostListener('window:scroll', ['$event'])

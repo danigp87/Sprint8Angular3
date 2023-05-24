@@ -1,15 +1,16 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-12 text-center p-5 border border-dark border-5 rounded-1 bg-dark text-light"
-            *ngFor="let ss of starships">
+<div class="container-fluid general ps-5 pe-5 pt-5 justify-content-center">
+    <div class="row justify-content-center">
+        <!-- <div class="col-3"></div> -->
+        <div class="col-12 text-center p-2 m-2 w-50 border border-dark border-1 rounded-1" *ngFor="let ss of starships">
             <a [routerLink]="['/starship-info', extractStarshipId(ss.url)]" class="custom-link">
                 <p>{{ss.name}}</p>
                 <p>{{ss.model}}</p>
             </a>
         </div>
+        <!-- <div class="col-3"></div> -->
     </div>
 </div>
 
-<div class="loading" *ngIf="currentPage <= totalPages">
+<div class="loading d-flex p-5 m-5 general justify-content-center" *ngIf="currentPage <= totalPages">
     Cargando más...
 </div>
