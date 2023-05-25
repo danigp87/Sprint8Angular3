@@ -9,7 +9,7 @@ import { Starship } from '@app/starwars/interfaces/starships';
 
 export class PilotsComponent {
 
-  starshipsArray: Starship[] = [];
-
+  /* public starship: Starship | undefined;
+  public starshipsArray: Starship[] = []; */
 
 }

@@ -4,9 +4,7 @@
             <h2 class="typoShip">{{starship?.name}}</h2>
         </div>
         <div class="row p-3 d-flex justify-content-center">
-
             <img class="col-6 d-flex border border-light whiteBG" [src]="starship?.imgURL" (error)="img404($event)" />
-
         </div>
         <div class="col-3"></div>
     </div>
@@ -32,18 +30,5 @@
             <p><b>MAXIMUM SPEED IN REALSPACE:</b> {{starship?.MGLT}}</p>
         </div>
     </div>
-    <!-- <div class="row p-3 text-center d-flex justify-content-center">
-        <div class="col-6">
-            <p><b>PILOTS:</b> </p>
-            <div *ngFor="let starship of starshipsArray">
-                <div *ngFor="let imageUrl of starship.pilots">
-                    <div *ngFor="let imgUrl of imageUrl">
-                    <img [src]="imgUrl" alt="">
-                    {{ imageUrl }}
-                </div>
-            </div>
-            </div>
-            <app-pilots></app-pilots>
-        </div>
-    </div> -->
+    <!-- <app-pilots></app-pilots> -->
 </div>
