@@ -27,6 +27,7 @@ export class StarshipsInfoComponent implements OnInit {
       }
     })
   }
+  
   getStarshipDetails(id: string) {
     this.http.get<Starship>(`https://swapi.dev/api/starships/${id}`)
       .subscribe((data: Starship) => {
@@ -35,7 +36,13 @@ export class StarshipsInfoComponent implements OnInit {
         this.starshipsArray.push(data); // Agrega la información de la nave espacial al array
       });
   }
+  
   getStarshipById(id: string): Starship | undefined {
     return this.starshipsArray.find(starship => starship.url.endsWith(id));
   }
+
+  public img404(event: Event) {
+    (event.target as HTMLImageElement).src = 'assets/404.png';
+  }
+
 }

@@ -3,9 +3,10 @@
         <div class="col-12 d-flex justify-content-center">
             <h2 class="typoShip">{{starship?.name}}</h2>
         </div>
-        <div class="row p-3">
-            <div class="col-3"></div>
-            <img class="col-6 d-flex border border-light" [src]="starship?.imgURL">
+        <div class="row p-3 d-flex justify-content-center">
+
+            <img class="col-6 d-flex border border-light whiteBG" [src]="starship?.imgURL" (error)="img404($event)" />
+
         </div>
         <div class="col-3"></div>
     </div>
@@ -18,29 +19,31 @@
         </div>
     </div>
     <div class="row p-3">
-        <div class="col-6">
+        <div class="col-6 text-center">
             <p><b>CREW:</b> {{starship?.crew}}</p>
             <p><b>PASSENGER CAPACITY:</b> {{starship?.passengers}}</p>
             <p><b>CARGO CAPACITY:</b> {{starship?.cargo_capacity}}</p>
             <p><b>CONSUMABLES:</b> {{starship?.consumables}}</p>
         </div>
-        <div class="col-6">
+        <div class="col-6 text-center">
             <p><b>LENGTH:</b> {{starship?.length}}</p>
             <p><b>MAXIMUM ATMOSPHERING SPEED:</b> {{starship?.max_atmosphering_speed}}</p>
             <p><b>HYPERDRIVE RATING:</b> {{starship?.hyperdrive_rating}}</p>
             <p><b>MAXIMUM SPEED IN REALSPACE:</b> {{starship?.MGLT}}</p>
         </div>
     </div>
-    <div class="row p-3">
+    <!-- <div class="row p-3 text-center d-flex justify-content-center">
         <div class="col-6">
             <p><b>PILOTS:</b> </p>
-                <div *ngFor="let starship of starshipsArray">
-                    <div *ngFor="let imageUrl of starship.pilots">
-                      <img [src]="imageUrl" alt="">
-                      {{ imageUrl }}
-                    </div>
+            <div *ngFor="let starship of starshipsArray">
+                <div *ngFor="let imageUrl of starship.pilots">
+                    <div *ngFor="let imgUrl of imageUrl">
+                    <img [src]="imgUrl" alt="">
+                    {{ imageUrl }}
                 </div>
-                <app-pilots></app-pilots>
+            </div>
+            </div>
+            <app-pilots></app-pilots>
         </div>
-    </div>
+    </div> -->
 </div>

@@ -11,19 +11,23 @@ import { map } from 'rxjs/operators';
 export class StarshipsComponent implements OnInit {
 
   starships: Starship[] = []
+  private reload = true;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit() {
+    if (this.reload) {
+      this.reload = false;
+    }
     this.callAPI();
   }
 
-  currentPage: number = 1;
+  currentPage: number = 0;
   totalPages: number = 0;
   loading: boolean = false;
 
   callAPI() {
-    if (this.currentPage > this.totalPages && this.totalPages !== 0) {
+    if (this.currentPage === this.totalPages && this.totalPages !== 0) {
       return; // Detener la llamada si ya se alcanzó la última página
     }
     if (this.loading) {
@@ -34,7 +38,7 @@ export class StarshipsComponent implements OnInit {
     const itemsLoaded = this.starships.length;
     const nextPage = Math.ceil((itemsLoaded + 1) / itemsPerPage);
 
-    this.http.get<StarshipList>('https://swapi.dev/api/starships/?page=' + this.currentPage)
+    this.http.get<StarshipList>('https://swapi.dev/api/starships/?page=' + (this.currentPage + 1))
       .pipe(
         map((data: StarshipList) => {
           this.starships = this.starships.concat(data.results); // Concatena los nuevos elementos al array existente
@@ -53,7 +57,7 @@ export class StarshipsComponent implements OnInit {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
 
-    if (windowHeight + scrollTop >= scrollHeight - 1) {
+    if (windowHeight + scrollTop >= scrollHeight) {
       this.callAPI();
     }
   }
